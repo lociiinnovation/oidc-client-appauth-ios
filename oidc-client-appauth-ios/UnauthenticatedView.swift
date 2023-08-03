@@ -10,10 +10,9 @@ struct UnauthenticatedView: View {
                   .foregroundColor(Color("PrimaryColor"))
                   .padding(.top , 40)
                   .multilineTextAlignment(.center)
-              
+            Spacer()
             Image("AuthIcon")
                   .aspectRatio(contentMode: .fit)
-                  .padding(.top, 20)
               Spacer()
 
             Button {

@@ -4,6 +4,7 @@ import AppAuth
 class AuthenticationViewModel: ObservableObject {
     @Published var authState: OIDAuthState?
     @Published var isAuthenticated = false
+    @Published var error: String?
 
     private var userAgentSession: OIDExternalUserAgentSession?
     typealias PostRegistrationCallback = (_ configuration: OIDServiceConfiguration?, _ registrationResponse: OIDRegistrationResponse?) -> Void
@@ -14,15 +15,10 @@ class AuthenticationViewModel: ObservableObject {
             return scene!.keyWindow!.rootViewController!
         }
     
-    func doClientRegistration(configuration: OIDServiceConfiguration, callback: @escaping PostRegistrationCallback) {
-
-            guard let redirectURI = URL(string: "id.truuth.client:/callback") else {
-                print("Error creating URL for : id.truuth.client:/callback")
-                return
-            }
+    func doClientRegistration(configuration: OIDServiceConfiguration, redirectURL:URL,  callback: @escaping PostRegistrationCallback) {
 
             let request: OIDRegistrationRequest = OIDRegistrationRequest(configuration: configuration,
-                                                                         redirectURIs: [redirectURI],
+                                                                         redirectURIs: [redirectURL],
                                                                          responseTypes: nil,
                                                                          grantTypes: nil,
                                                                          subjectType: nil,
@@ -30,34 +26,26 @@ class AuthenticationViewModel: ObservableObject {
                                                                          additionalParameters: nil)
 
             // performs registration request
-            print("Initiating registration request")
-
             OIDAuthorizationService.perform(request) { response, error in
 
                 if let regResponse = response {
                     self.authState = OIDAuthState(registrationResponse: regResponse)
-                    print("Got registration response: \(regResponse)")
                     callback(configuration, regResponse)
                 } else {
-                    print("Registration error: \(error?.localizedDescription ?? "DEFAULT_ERROR")")
+                    self.error = "Registration Error: \(error?.localizedDescription ?? "DEFAULT_ERROR")"
                     self.authState = nil
                 }
             }
         }
     
-    func doAuthWithAutoCodeExchange(configuration: OIDServiceConfiguration, clientID: String, clientSecret: String?) {
-
-        guard let redirectURI = URL(string: "id.truuth.client:/callback") else {
-                    print("Invalid redirectURI")
-                    return
-                }
+    func doAuthWithAutoCodeExchange(configuration: OIDServiceConfiguration, redirectURL: URL, clientID: String, clientSecret: String?) {
 
             // builds authentication request
             let request = OIDAuthorizationRequest(configuration: configuration,
                                                   clientId: clientID,
                                                   clientSecret: clientSecret,
                                                   scopes: [OIDScopeOpenID, OIDScopeProfile],
-                                                  redirectURL: redirectURI,
+                                                  redirectURL: redirectURL,
                                                   responseType: OIDResponseTypeCode,
                                                   additionalParameters: nil)
 
@@ -72,40 +60,46 @@ class AuthenticationViewModel: ObservableObject {
                     print("Got authorization ID tokens. ID token: \(authState.lastTokenResponse?.idToken ?? "DEFAULT_TOKEN")")
                     self.isAuthenticated = true;
                 } else {
-                    print("Authorization error: \(error?.localizedDescription ?? "DEFAULT_ERROR")")
+                    self.error = "Authorization error: \(error?.localizedDescription ?? "DEFAULT_ERROR")"
                     self.authState = nil
                 }
             }
         }
     
     func authenticate() {
-                guard let issuerURL = URL(string: "https://idp.au.test.truuth.id/acme") else {
-                            print("Invalid Issuer")
+        guard let issuerURL = URL(string: "https://idp.au.test.truuth.id/acme") else {
+            self.error = "Validation Error: Invalid Issuer"
                             return
                         }
+        guard let redirectURL = URL(string: "id.truuth.client:/callback") else {
+            self.error = "Validation Error: Invalid RedirectURI"
+            return
+        }
         
         let clientID: String = "0JT77eDIAgsdBdnJmBa9";
+        
 
       
         // discovers endpoints
                 OIDAuthorizationService.discoverConfiguration(forIssuer: issuerURL) { configuration, error in
 
                     guard let config = configuration else {
-                        print("Error retrieving discovery document: \(error?.localizedDescription ?? "DEFAULT_ERROR")")
+                        self.error = "Error : retrieving discovery document: \(error?.localizedDescription ?? "DEFAULT_ERROR")"
                         self.authState = nil
                         return
                     }
                     if let clientId = clientID as! String? {
-                        self.doAuthWithAutoCodeExchange(configuration: config, clientID: clientId, clientSecret: nil)
+                        self.doAuthWithAutoCodeExchange(configuration: config, redirectURL: redirectURL, clientID: clientId, clientSecret: nil)
                     } else {
-                        self.doClientRegistration(configuration: config) { configuration, response in
+                        self.doClientRegistration(configuration: config, redirectURL: redirectURL) { configuration, response in
 
                             guard let configuration = configuration, let clientID = response?.clientID else {
-                                print("Error retrieving configuration OR clientID")
+                                self.error = "Error : retrieving configuration OR clientID"
                                 return
                             }
 
                             self.doAuthWithAutoCodeExchange(configuration: configuration,
+                                                            redirectURL: redirectURL,
                                                             clientID: clientID,
                                                             clientSecret: response?.clientSecret)
                }

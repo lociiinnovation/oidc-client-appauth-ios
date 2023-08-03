@@ -15,6 +15,7 @@
 		464AE25C2A7B3C57009A2F08 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE25B2A7B3C57009A2F08 /* AuthenticationViewModel.swift */; };
 		464AE25F2A7B412F009A2F08 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE25E2A7B412F009A2F08 /* AuthenticatedView.swift */; };
 		464AE2612A7B414E009A2F08 /* UnauthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE2602A7B414E009A2F08 /* UnauthenticatedView.swift */; };
+		464AE2632A7B7C6D009A2F08 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE2622A7B7C6C009A2F08 /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		464AE25D2A7B3DCE009A2F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		464AE25E2A7B412F009A2F08 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
 		464AE2602A7B414E009A2F08 /* UnauthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthenticatedView.swift; sourceTree = "<group>"; };
+		464AE2622A7B7C6C009A2F08 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				464AE25B2A7B3C57009A2F08 /* AuthenticationViewModel.swift */,
 				464AE25E2A7B412F009A2F08 /* AuthenticatedView.swift */,
 				464AE2602A7B414E009A2F08 /* UnauthenticatedView.swift */,
+				464AE2622A7B7C6C009A2F08 /* ErrorView.swift */,
 				464AE24C2A7B2BDA009A2F08 /* ContentView.swift */,
 				464AE24E2A7B2BDD009A2F08 /* Assets.xcassets */,
 				464AE2502A7B2BDD009A2F08 /* Preview Content */,
@@ -157,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				464AE25F2A7B412F009A2F08 /* AuthenticatedView.swift in Sources */,
+				464AE2632A7B7C6D009A2F08 /* ErrorView.swift in Sources */,
 				464AE25C2A7B3C57009A2F08 /* AuthenticationViewModel.swift in Sources */,
 				464AE2612A7B414E009A2F08 /* UnauthenticatedView.swift in Sources */,
 				464AE24D2A7B2BDA009A2F08 /* ContentView.swift in Sources */,

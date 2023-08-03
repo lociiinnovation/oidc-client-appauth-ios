@@ -8,9 +8,15 @@ struct ContentView: View {
         if viewModel.isAuthenticated {
             AuthenticatedView().environmentObject(viewModel)
         } else {
-            UnauthenticatedView().environmentObject(viewModel)
+            if(viewModel.error != nil){
+                ErrorView().environmentObject(viewModel)
+            }
+            else
+            {
+                UnauthenticatedView().environmentObject(viewModel)
         }
     }
+}
 }
 
 struct ContentView_Previews: PreviewProvider {

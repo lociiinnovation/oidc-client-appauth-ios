@@ -11,6 +11,10 @@
 		464AE24D2A7B2BDA009A2F08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE24C2A7B2BDA009A2F08 /* ContentView.swift */; };
 		464AE24F2A7B2BDD009A2F08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464AE24E2A7B2BDD009A2F08 /* Assets.xcassets */; };
 		464AE2522A7B2BDD009A2F08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464AE2512A7B2BDD009A2F08 /* Preview Assets.xcassets */; };
+		464AE25A2A7B39C2009A2F08 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 464AE2592A7B39C2009A2F08 /* AppAuth */; };
+		464AE25C2A7B3C57009A2F08 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE25B2A7B3C57009A2F08 /* AuthenticationViewModel.swift */; };
+		464AE25F2A7B412F009A2F08 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE25E2A7B412F009A2F08 /* AuthenticatedView.swift */; };
+		464AE2612A7B414E009A2F08 /* UnauthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE2602A7B414E009A2F08 /* UnauthenticatedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		464AE24C2A7B2BDA009A2F08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		464AE24E2A7B2BDD009A2F08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		464AE2512A7B2BDD009A2F08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		464AE25B2A7B3C57009A2F08 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		464AE25D2A7B3DCE009A2F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		464AE25E2A7B412F009A2F08 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
+		464AE2602A7B414E009A2F08 /* UnauthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnauthenticatedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464AE25A2A7B39C2009A2F08 /* AppAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +60,11 @@
 		464AE2492A7B2BDA009A2F08 /* oidc-client-appauth-ios */ = {
 			isa = PBXGroup;
 			children = (
+				464AE25D2A7B3DCE009A2F08 /* Info.plist */,
 				464AE24A2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift */,
+				464AE25B2A7B3C57009A2F08 /* AuthenticationViewModel.swift */,
+				464AE25E2A7B412F009A2F08 /* AuthenticatedView.swift */,
+				464AE2602A7B414E009A2F08 /* UnauthenticatedView.swift */,
 				464AE24C2A7B2BDA009A2F08 /* ContentView.swift */,
 				464AE24E2A7B2BDD009A2F08 /* Assets.xcassets */,
 				464AE2502A7B2BDD009A2F08 /* Preview Content */,
@@ -83,6 +96,9 @@
 			dependencies = (
 			);
 			name = "oidc-client-appauth-ios";
+			packageProductDependencies = (
+				464AE2592A7B39C2009A2F08 /* AppAuth */,
+			);
 			productName = "oidc-client-appauth-ios";
 			productReference = 464AE2472A7B2BDA009A2F08 /* oidc-client-appauth-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 464AE23E2A7B2BDA009A2F08;
+			packageReferences = (
+				464AE2582A7B39C2009A2F08 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
+			);
 			productRefGroup = 464AE2482A7B2BDA009A2F08 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464AE25F2A7B412F009A2F08 /* AuthenticatedView.swift in Sources */,
+				464AE25C2A7B3C57009A2F08 /* AuthenticationViewModel.swift in Sources */,
+				464AE2612A7B414E009A2F08 /* UnauthenticatedView.swift in Sources */,
 				464AE24D2A7B2BDA009A2F08 /* ContentView.swift in Sources */,
 				464AE24B2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift in Sources */,
 			);
@@ -270,6 +292,7 @@
 				DEVELOPMENT_TEAM = 9M3RTNT6XP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "oidc-client-appauth-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -280,7 +303,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "id.truuth.oidc-client-appauth-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = id.truuth.appauth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -299,6 +322,7 @@
 				DEVELOPMENT_TEAM = 9M3RTNT6XP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "oidc-client-appauth-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,7 +333,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "id.truuth.oidc-client-appauth-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = id.truuth.appauth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,6 +363,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		464AE2582A7B39C2009A2F08 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/openid/AppAuth-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		464AE2592A7B39C2009A2F08 /* AppAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 464AE2582A7B39C2009A2F08 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 464AE23F2A7B2BDA009A2F08 /* Project object */;
 }

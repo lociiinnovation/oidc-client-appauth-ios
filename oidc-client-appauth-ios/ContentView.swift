@@ -1,16 +1,15 @@
-//
-//  ContentView.swift
-//  oidc-client-appauth-ios
-//
-//  Created by Locii on 3/8/2023.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var viewModel = AuthenticationViewModel()
+
+    @ViewBuilder
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        if viewModel.isAuthenticated {
+            AuthenticatedView().environmentObject(viewModel)
+        } else {
+            UnauthenticatedView().environmentObject(viewModel)
+        }
     }
 }
 
@@ -19,3 +18,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

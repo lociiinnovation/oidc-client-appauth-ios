@@ -8,3 +8,4 @@ struct oidc_client_appauth_iosApp: App {
         }
     }
 }
+

@@ -1,46 +1,49 @@
-//
-//  AuthenticatedView.swift
-//  oidc-client-appauth-ios
-//
-//  Created by Locii on 3/8/2023.
-//
-
 import SwiftUI
 
 struct AuthenticatedView: View {
     @EnvironmentObject private var viewModel: AuthenticationViewModel
+
     let deviceWidth = UIScreen.main.bounds.size.width
     var body: some View {
-        VStack {
-        Text("Access Token")
-                .foregroundColor(Color.gray)
-                      .font(.system(size: 20))
-                      .fontWeight(.semibold)            .padding(.top, 20)
-            .padding(.leading, 20)
-            .frame(width: deviceWidth, alignment: .leading)
-        
-            Text(self.viewModel.authState!.lastTokenResponse?.accessToken as! String)
-                .foregroundColor(Color.blue)
-                .font(.system(size: 16))
-                .fontWeight(.semibold)
-            .padding(.leading, 20)
-            .frame(width: deviceWidth, alignment: .leading)
+        Form{
+            Section {
+                Text("You are authenticated")
+                    .font(Font.title2.weight(.bold))
+                          .padding()
+                          .multilineTextAlignment(.center)
+                          .frame(maxWidth: .infinity, alignment: .center)
 
-        Text("ID Token")
-                .foregroundColor(Color.gray)
-                      .font(.system(size: 20))
-                      .fontWeight(.semibold)
-            .padding(.top, 20)
-            .padding(.leading, 20)
-            .frame(width: deviceWidth, alignment: .leading)
-
+            }
+            Section{
+             Text("Access Token")
+                .font(.headline)
+             Text(self.viewModel.authState!.lastTokenResponse?.accessToken as! String)
+                 .font(.body)
+                 .lineLimit(nil)
+                 .padding()
+            }
+            Section{
+                Text("ID Token")
+                .font(.headline)
             Text(self.viewModel.authState!.lastTokenResponse?.idToken as! String)
-                .foregroundColor(Color.gray)
-                      .font(.system(size: 20))
-                      .fontWeight(.semibold)
-            .padding(.leading, 20)
-            .frame(width: deviceWidth, alignment: .leading)
+                .font(.body)
+                .lineLimit(nil)
+                .padding()
+
+            }
+            Section{
+                    Button {
+                        viewModel.isAuthenticated = false
+                        
+                    } label: {
+                        Text("Retry").bold()
+                            .frame(maxWidth: .infinity).padding(10)
+                        
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(Color("PrimaryColor"))
         }
+     }
     }
 }
 

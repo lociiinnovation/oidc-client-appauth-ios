@@ -5,12 +5,11 @@ struct UnauthenticatedView: View {
 
     var body: some View {
         VStack {
-            Text("Biopass AppAuth Demo App")
+            Text("Biopass AppAuth\nDemo App")
                   .font(Font.title.weight(.bold))
                   .foregroundColor(Color("PrimaryColor"))
                   .padding(.top , 40)
                   .multilineTextAlignment(.center)
-                  .fixedSize(horizontal: false, vertical: true)
               
             Image("AuthIcon")
                   .aspectRatio(contentMode: .fit)
@@ -21,7 +20,7 @@ struct UnauthenticatedView: View {
                 viewModel.authenticate()
             } label: {
                 Text("Authenticate").bold()
-                    .frame(maxWidth: .infinity).padding(5)
+                    .frame(maxWidth: .infinity).padding(10)
                 
             }
             .buttonStyle(.borderedProminent)

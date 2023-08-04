@@ -1,0 +1,6 @@
+{
+  "issuer": "<YOUR_ISSUER>",
+  "clientID": "<YOUR_CLIENT_ID>",
+  "redirectUri": "id.truuth.client:/callback",
+  "scope": "<YOUR_SCOPES>"
+}

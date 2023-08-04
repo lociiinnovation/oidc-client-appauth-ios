@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4637A43C2A7C7486007413B5 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4637A43B2A7C7486007413B5 /* config.json */; };
+		4637A43E2A7C7787007413B5 /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4637A43D2A7C7787007413B5 /* ApplicationConfig.swift */; };
 		464AE24B2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE24A2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift */; };
 		464AE24D2A7B2BDA009A2F08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE24C2A7B2BDA009A2F08 /* ContentView.swift */; };
 		464AE24F2A7B2BDD009A2F08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464AE24E2A7B2BDD009A2F08 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4637A43B2A7C7486007413B5 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		4637A43D2A7C7787007413B5 /* ApplicationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
 		464AE2472A7B2BDA009A2F08 /* oidc-client-appauth-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "oidc-client-appauth-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		464AE24A2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oidc_client_appauth_iosApp.swift; sourceTree = "<group>"; };
 		464AE24C2A7B2BDA009A2F08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 		464AE2492A7B2BDA009A2F08 /* oidc-client-appauth-ios */ = {
 			isa = PBXGroup;
 			children = (
+				4637A43D2A7C7787007413B5 /* ApplicationConfig.swift */,
+				4637A43B2A7C7486007413B5 /* config.json */,
 				464AE25D2A7B3DCE009A2F08 /* Info.plist */,
 				464AE24A2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift */,
 				464AE25B2A7B3C57009A2F08 /* AuthenticationViewModel.swift */,
@@ -149,6 +155,7 @@
 			files = (
 				464AE2522A7B2BDD009A2F08 /* Preview Assets.xcassets in Resources */,
 				464AE24F2A7B2BDD009A2F08 /* Assets.xcassets in Resources */,
+				4637A43C2A7C7486007413B5 /* config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +172,7 @@
 				464AE2612A7B414E009A2F08 /* UnauthenticatedView.swift in Sources */,
 				464AE24D2A7B2BDA009A2F08 /* ContentView.swift in Sources */,
 				464AE24B2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift in Sources */,
+				4637A43E2A7C7787007413B5 /* ApplicationConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

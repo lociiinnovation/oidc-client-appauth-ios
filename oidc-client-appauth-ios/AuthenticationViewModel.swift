@@ -38,13 +38,13 @@ class AuthenticationViewModel: ObservableObject {
             }
         }
     
-    func doAuthWithAutoCodeExchange(configuration: OIDServiceConfiguration, redirectURL: URL, clientID: String, clientSecret: String?) {
+    func doAuthWithCodeExchange(configuration: OIDServiceConfiguration, scopes: [String]?, redirectURL: URL, clientID: String, clientSecret: String?) {
 
             // builds authentication request
             let request = OIDAuthorizationRequest(configuration: configuration,
                                                   clientId: clientID,
                                                   clientSecret: clientSecret,
-                                                  scopes: [OIDScopeOpenID, OIDScopeProfile],
+                                                  scopes: scopes ?? [OIDScopeOpenID, OIDScopeProfile],
                                                   redirectURL: redirectURL,
                                                   responseType: OIDResponseTypeCode,
                                                   additionalParameters: nil)
@@ -66,18 +66,38 @@ class AuthenticationViewModel: ObservableObject {
             }
         }
     
+    func loadAppConfig() -> ApplicationConfig? {
+
+        if let url = Bundle.main.url(forResource: "config", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let config = try JSONDecoder().decode(ApplicationConfig.self, from: data)
+                return config
+            } catch {
+                self.error = "Error decoding config: \(error)"
+            }
+    }
+        self.error = "Error: no config file found!"
+        return nil
+    }
+
+    
     func authenticate() {
-        guard let issuerURL = URL(string: "https://idp.au.test.truuth.id/acme") else {
+        guard let config = loadAppConfig() else {
+          return
+        }
+        
+        guard let issuerURL = URL(string: config.issuer) else {
             self.error = "Validation Error: Invalid Issuer"
                             return
                         }
-        guard let redirectURL = URL(string: "id.truuth.client:/callback") else {
+        guard let redirectURL = URL(string: config.redirectUri) else {
             self.error = "Validation Error: Invalid RedirectURI"
             return
         }
-        
-        let clientID: String = "0JT77eDIAgsdBdnJmBa9";
-        
+        let clientID: String = config.clientID;
+        let scopesArray = config.scope.components(separatedBy: " ")
+
 
       
         // discovers endpoints
@@ -89,7 +109,7 @@ class AuthenticationViewModel: ObservableObject {
                         return
                     }
                     if let clientId = clientID as! String? {
-                        self.doAuthWithAutoCodeExchange(configuration: config, redirectURL: redirectURL, clientID: clientId, clientSecret: nil)
+                        self.doAuthWithCodeExchange(configuration: config, scopes: scopesArray, redirectURL: redirectURL, clientID: clientId, clientSecret: nil)
                     } else {
                         self.doClientRegistration(configuration: config, redirectURL: redirectURL) { configuration, response in
 
@@ -98,7 +118,8 @@ class AuthenticationViewModel: ObservableObject {
                                 return
                             }
 
-                            self.doAuthWithAutoCodeExchange(configuration: configuration,
+                            self.doAuthWithCodeExchange(configuration: configuration,
+                                                            scopes: scopesArray,
                                                             redirectURL: redirectURL,
                                                             clientID: clientID,
                                                             clientSecret: response?.clientSecret)

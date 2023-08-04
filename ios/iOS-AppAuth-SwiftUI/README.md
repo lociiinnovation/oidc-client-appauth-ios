@@ -9,7 +9,13 @@ The code example is a SwiftUI app and the main OAuth integration is done in the 
 
 # 
 
-# Step 2: Update OAuth Client Settings
+# Step 2: Add the AppAuth Dependency
+
+Add AppAuth using the Swift dependency manager by typing in the URL to the AppAuth repo. When prompted, please select the package product named **AppAuth**:
+
+#
+
+# Step 3: Update OAuth Client Settings
 
 The code example uses a configuration file as **config.json** which needs to be updated using your configuration data before running the demo app on your phone/simulator.
 
@@ -28,7 +34,7 @@ You can add the list of your considered scopes seperated by spaces (e.g. "openid
 
 # 
 
-# Step 3: Run the Sample App on an Emulator / Device
+# Step 4: Run the Sample App on an Emulator / Device
 
 To run the app on a device you must have an Apple account configured in Xcode under **Preferences / Accounts**. You also need to sign the app, such as by selecting the **Automatically Manage Signing** option in Xcode.
 

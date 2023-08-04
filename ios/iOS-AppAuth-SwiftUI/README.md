@@ -52,4 +52,9 @@ The login is done using the system browser, which overlays the mobile view and p
 # 
 
 
-Once signed in the app switches to an Authenticated View, to simulate screens in real apps that work with access tokens and call APIs. This view presents details about tokens and also allows token refresh to be tested:
+Once signed in the app switches to an Authenticated View, to simulate screens in real apps that work with access tokens and call APIs. This view presents details about tokens and also allows token refresh to be tested.
+
+
+# Reference
+
+<https://biopass.readme.io/docs/ios-setup-and-integration-using-appauth-swiftui-app>

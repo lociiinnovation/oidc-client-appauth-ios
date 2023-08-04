@@ -7,24 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462893BB2A7CC1CB00CB3A94 /* AppAuthSwiftUIDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE24A2A7B2BDA009A2F08 /* AppAuthSwiftUIDemoApp.swift */; };
+		462893BC2A7CC20800CB3A94 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE24C2A7B2BDA009A2F08 /* ContentView.swift */; };
+		462893BD2A7CC22000CB3A94 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE25B2A7B3C57009A2F08 /* AuthenticationViewModel.swift */; };
+		462893BE2A7CC22000CB3A94 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE25E2A7B412F009A2F08 /* AuthenticatedView.swift */; };
+		462893BF2A7CC22000CB3A94 /* UnauthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE2602A7B414E009A2F08 /* UnauthenticatedView.swift */; };
+		462893C02A7CC22000CB3A94 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE2622A7B7C6C009A2F08 /* ErrorView.swift */; };
+		462893C12A7CC24400CB3A94 /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4637A43D2A7C7787007413B5 /* ApplicationConfig.swift */; };
+		462893C22A7CC24400CB3A94 /* config.json in Sources */ = {isa = PBXBuildFile; fileRef = 4637A43B2A7C7486007413B5 /* config.json */; };
 		4637A43C2A7C7486007413B5 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4637A43B2A7C7486007413B5 /* config.json */; };
-		4637A43E2A7C7787007413B5 /* ApplicationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4637A43D2A7C7787007413B5 /* ApplicationConfig.swift */; };
-		464AE24B2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE24A2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift */; };
-		464AE24D2A7B2BDA009A2F08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE24C2A7B2BDA009A2F08 /* ContentView.swift */; };
 		464AE24F2A7B2BDD009A2F08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464AE24E2A7B2BDD009A2F08 /* Assets.xcassets */; };
 		464AE2522A7B2BDD009A2F08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464AE2512A7B2BDD009A2F08 /* Preview Assets.xcassets */; };
 		464AE25A2A7B39C2009A2F08 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 464AE2592A7B39C2009A2F08 /* AppAuth */; };
-		464AE25C2A7B3C57009A2F08 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE25B2A7B3C57009A2F08 /* AuthenticationViewModel.swift */; };
-		464AE25F2A7B412F009A2F08 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE25E2A7B412F009A2F08 /* AuthenticatedView.swift */; };
-		464AE2612A7B414E009A2F08 /* UnauthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE2602A7B414E009A2F08 /* UnauthenticatedView.swift */; };
-		464AE2632A7B7C6D009A2F08 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464AE2622A7B7C6C009A2F08 /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4637A43B2A7C7486007413B5 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		4637A43D2A7C7787007413B5 /* ApplicationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfig.swift; sourceTree = "<group>"; };
-		464AE2472A7B2BDA009A2F08 /* oidc-client-appauth-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "oidc-client-appauth-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		464AE24A2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oidc_client_appauth_iosApp.swift; sourceTree = "<group>"; };
+		464AE2472A7B2BDA009A2F08 /* AppAuthSwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppAuthSwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		464AE24A2A7B2BDA009A2F08 /* AppAuthSwiftUIDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAuthSwiftUIDemoApp.swift; sourceTree = "<group>"; };
 		464AE24C2A7B2BDA009A2F08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		464AE24E2A7B2BDD009A2F08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		464AE2512A7B2BDD009A2F08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -50,7 +51,7 @@
 		464AE23E2A7B2BDA009A2F08 = {
 			isa = PBXGroup;
 			children = (
-				464AE2492A7B2BDA009A2F08 /* oidc-client-appauth-ios */,
+				464AE2492A7B2BDA009A2F08 /* AppAuthSwiftUIDemo */,
 				464AE2482A7B2BDA009A2F08 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,18 +59,18 @@
 		464AE2482A7B2BDA009A2F08 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				464AE2472A7B2BDA009A2F08 /* oidc-client-appauth-ios.app */,
+				464AE2472A7B2BDA009A2F08 /* AppAuthSwiftUIDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		464AE2492A7B2BDA009A2F08 /* oidc-client-appauth-ios */ = {
+		464AE2492A7B2BDA009A2F08 /* AppAuthSwiftUIDemo */ = {
 			isa = PBXGroup;
 			children = (
 				4637A43D2A7C7787007413B5 /* ApplicationConfig.swift */,
 				4637A43B2A7C7486007413B5 /* config.json */,
 				464AE25D2A7B3DCE009A2F08 /* Info.plist */,
-				464AE24A2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift */,
+				464AE24A2A7B2BDA009A2F08 /* AppAuthSwiftUIDemoApp.swift */,
 				464AE25B2A7B3C57009A2F08 /* AuthenticationViewModel.swift */,
 				464AE25E2A7B412F009A2F08 /* AuthenticatedView.swift */,
 				464AE2602A7B414E009A2F08 /* UnauthenticatedView.swift */,
@@ -78,7 +79,7 @@
 				464AE24E2A7B2BDD009A2F08 /* Assets.xcassets */,
 				464AE2502A7B2BDD009A2F08 /* Preview Content */,
 			);
-			path = "oidc-client-appauth-ios";
+			path = AppAuthSwiftUIDemo;
 			sourceTree = "<group>";
 		};
 		464AE2502A7B2BDD009A2F08 /* Preview Content */ = {
@@ -92,9 +93,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		464AE2462A7B2BDA009A2F08 /* oidc-client-appauth-ios */ = {
+		464AE2462A7B2BDA009A2F08 /* AppAuthSwiftUIDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 464AE2552A7B2BDD009A2F08 /* Build configuration list for PBXNativeTarget "oidc-client-appauth-ios" */;
+			buildConfigurationList = 464AE2552A7B2BDD009A2F08 /* Build configuration list for PBXNativeTarget "AppAuthSwiftUIDemo" */;
 			buildPhases = (
 				464AE2432A7B2BDA009A2F08 /* Sources */,
 				464AE2442A7B2BDA009A2F08 /* Frameworks */,
@@ -104,12 +105,12 @@
 			);
 			dependencies = (
 			);
-			name = "oidc-client-appauth-ios";
+			name = AppAuthSwiftUIDemo;
 			packageProductDependencies = (
 				464AE2592A7B39C2009A2F08 /* AppAuth */,
 			);
 			productName = "oidc-client-appauth-ios";
-			productReference = 464AE2472A7B2BDA009A2F08 /* oidc-client-appauth-ios.app */;
+			productReference = 464AE2472A7B2BDA009A2F08 /* AppAuthSwiftUIDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +128,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 464AE2422A7B2BDA009A2F08 /* Build configuration list for PBXProject "oidc-client-appauth-ios" */;
+			buildConfigurationList = 464AE2422A7B2BDA009A2F08 /* Build configuration list for PBXProject "AppAuthSwiftUIDemo" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				464AE2462A7B2BDA009A2F08 /* oidc-client-appauth-ios */,
+				464AE2462A7B2BDA009A2F08 /* AppAuthSwiftUIDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -166,13 +167,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464AE25F2A7B412F009A2F08 /* AuthenticatedView.swift in Sources */,
-				464AE2632A7B7C6D009A2F08 /* ErrorView.swift in Sources */,
-				464AE25C2A7B3C57009A2F08 /* AuthenticationViewModel.swift in Sources */,
-				464AE2612A7B414E009A2F08 /* UnauthenticatedView.swift in Sources */,
-				464AE24D2A7B2BDA009A2F08 /* ContentView.swift in Sources */,
-				464AE24B2A7B2BDA009A2F08 /* oidc_client_appauth_iosApp.swift in Sources */,
-				4637A43E2A7C7787007413B5 /* ApplicationConfig.swift in Sources */,
+				462893C12A7CC24400CB3A94 /* ApplicationConfig.swift in Sources */,
+				462893C22A7CC24400CB3A94 /* config.json in Sources */,
+				462893BD2A7CC22000CB3A94 /* AuthenticationViewModel.swift in Sources */,
+				462893BE2A7CC22000CB3A94 /* AuthenticatedView.swift in Sources */,
+				462893BF2A7CC22000CB3A94 /* UnauthenticatedView.swift in Sources */,
+				462893C02A7CC22000CB3A94 /* ErrorView.swift in Sources */,
+				462893BC2A7CC20800CB3A94 /* ContentView.swift in Sources */,
+				462893BB2A7CC1CB00CB3A94 /* AppAuthSwiftUIDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,11 +302,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"oidc-client-appauth-ios/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AppAuthSwiftUIDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 9M3RTNT6XP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "oidc-client-appauth-ios/Info.plist";
+				INFOPLIST_FILE = AppAuthSwiftUIDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -330,11 +332,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"oidc-client-appauth-ios/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AppAuthSwiftUIDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 9M3RTNT6XP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "oidc-client-appauth-ios/Info.plist";
+				INFOPLIST_FILE = AppAuthSwiftUIDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -356,7 +358,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		464AE2422A7B2BDA009A2F08 /* Build configuration list for PBXProject "oidc-client-appauth-ios" */ = {
+		464AE2422A7B2BDA009A2F08 /* Build configuration list for PBXProject "AppAuthSwiftUIDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				464AE2532A7B2BDD009A2F08 /* Debug */,
@@ -365,7 +367,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		464AE2552A7B2BDD009A2F08 /* Build configuration list for PBXNativeTarget "oidc-client-appauth-ios" */ = {
+		464AE2552A7B2BDD009A2F08 /* Build configuration list for PBXNativeTarget "AppAuthSwiftUIDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				464AE2562A7B2BDD009A2F08 /* Debug */,

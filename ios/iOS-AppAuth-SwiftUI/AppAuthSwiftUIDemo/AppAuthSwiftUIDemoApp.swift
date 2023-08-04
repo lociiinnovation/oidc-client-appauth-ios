@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct oidc_client_appauth_iosApp: App {
+struct AppAuthSwiftUIDemoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
